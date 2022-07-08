@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<h3>Álcool ou Gasolina?</h3>
+
+<script>
+var tanque = 40;
+
+var caminhoComGas = 480; 
+var consumoGas = caminhoComGas/tanque;
+
+var caminhoComAl = 300;
+var consumoAl = caminhoComAl/tanque;
+
+document.write("O consumo de gasolina é de: "+ Math.round(consumoGas) +" km/L <br>");
+document.write("O consumo de álcool é de: "+ Math.round(consumoAl) + " Km/L <br>");
+
+var precoGas = 2.90;
+var precoAl = 2.40;
+var precoKmGas = precoGas/consumoGas;
+var precoKmAl = precoAl/consumoAl;
+
+document.write(" O preço da gasolina por kilometro é: "+ precoKmGas.toFixed(2)+"<br>") ;
+document.write(" O preço do álcool por kilometro é: "+ precoKmAl.toFixed(2) + "<br>");
+document.write("É mais vantajoso usar gasolina"); 
+
+</Script>

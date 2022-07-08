@@ -1,0 +1,36 @@
+<meta charset="UTF-8"/>
+Nome: <input type="text" id="nome" /><br><br>
+Email: <input type="text" id="email" /><br><br>
+Idade: <input type="text" id="idade" /><br><br>
+<input type="submit" value="Adicionar" id="botao_adicionar"/>
+
+
+<script>
+var campo_nome = document.getElementById("nome");
+var campo_email = document.getElementById("email");
+var campo_idade = document.getElementById("idade");
+var botao = document.getElementById("botao_adicionar");
+
+
+var  botaoClicado = function(){
+	var pessoa = {
+		nome : campo_nome.value,
+		idade : campo_idade.value,
+		email : campo_email.value
+	}
+	console.log("nome: "+pessoa.nome);
+	console.log("idade: "+pessoa.idade);
+	console.log("email: "+pessoa.email);
+	
+	nome.value="";
+	idade.value="";
+	email.value="";
+}
+
+
+	
+
+botao.onclick = botaoClicado;
+
+
+</script>

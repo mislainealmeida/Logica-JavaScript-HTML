@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+var mostra = function (frase){
+	document.write(frase + "<br>");
+};
+
+var anoCopa = prompt ("Qual o ano inicial? ");
+var anoLimite = prompt ("Qual o ano limite? ");
+
+if(anoCopa<1930){
+	mostra("A primeira copa foi em 1930, seu ano inicial precisa ser maior ou igual 1930  ");
+}else{
+	while(anoCopa<=anoLimite){
+	mostra(parseInt(anoCopa)+" tem copa!");
+	anoCopa = parseInt(anoCopa) +4;  
+}
+
+mostra("Ufa! Esses foram os anos de copa até "+ anoLimite);
+}
+
+</script>

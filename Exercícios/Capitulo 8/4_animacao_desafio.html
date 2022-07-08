@@ -1,0 +1,34 @@
+<canvas id="tela" width="400" height="400"></canvas>
+
+
+<script> 
+
+var tela= document.getElementById("tela");
+var c= tela.getContext("2d");
+
+
+var circulo= function(x,y,raio){
+	c.strokeStyle="blue"; 
+	c.beginPath();
+	c.arc(x,y,raio,0,2*Math.PI);
+	c.stroke();
+}
+
+
+var x= 1;
+var imagem= new Image();// caso a imagem esteja no computador, deice esse arquivo no mesmo diretório do html. 
+imagem.src= "carro.jpg";
+
+var desenhaImagem= function(x,y){
+	c.drawImage(imagem,x,y);
+}
+
+var desenha= function(){
+	desenhaImagem(x,100);
+	x=x+1;
+	;
+}
+
+setInterval(desenha, 20);
+
+</script>

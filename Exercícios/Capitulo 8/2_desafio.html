@@ -1,0 +1,67 @@
+<canvas id="tela" width="800" height="600"></canvas>
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+c.fillStyle = "white";
+c.fillRect(0,0,800,600);
+c.strokeStyle="black";
+c.strokeRect(0,0,800,600);
+
+
+var rosa = function(){
+	c.fillStyle = "purple";
+	c.fillRect(0,0,50,50);
+}
+rosa();
+
+var azul = function(){
+	c.fillStyle = "blue";
+	c.fillRect(0,70,50,50);
+}
+azul();
+
+
+var corPadrao = "lightgray"; 
+
+var bola = function(x, y, corPadrao){	
+	c.fillStyle = corPadrao;
+	c.beginPath();
+	c.arc(x, y, 10, 0, 2 * Math.PI);
+	c.fill();		
+		console.log("Posição do clique x " + x + ", y " + y);
+}
+
+var click = function(evento){
+	var x = evento.pageX - tela.offsetLeft;
+	var y = evento.pageY - tela.offsetTop;
+		desenhar = true;
+			if(evento.pageX > 0 && evento.pageX < 70 && evento.pageY > 0 && evento.pageY < 70){
+			console.log("rosa");
+			desenhar = false;
+			corPadrao = "purple";
+			console.log("Posição do clique x " + x + ", y " + y);
+			};
+			
+			if(evento.pageX > 0 && evento.pageX < 70 && evento.pageY > 70 && evento.pageY < 140){
+			console.log("azul");
+			desenhar = false;
+			corPadrao = "blue";
+			console.log("Posição do clique x " + x + ", y " + y);
+			};						
+							
+			if (desenhar){
+			bola(x, y, corPadrao);
+			};
+						
+}
+
+tela.onclick = click;
+
+
+	
+
+
+
+
+</script>

@@ -1,0 +1,62 @@
+<canvas id="tela" width="600" height="400"></canvas>
+<meta charset ="UTF-8">
+
+<script>
+var tela = document.getElementById("tela"); 
+var c= tela.getContext("2d");
+var raio=40;
+var alvoX;
+var alvoY; 
+
+var cor = function(cor){
+ c.fillStyle=cor;
+};
+
+var circulo= function(x,y,raio){
+	cor; 
+	c.beginPath();
+	c.arc(x,y,raio,0,2*Math.PI);
+	c.fill();
+}
+
+var desenhaAlvo= function(x,y){ 
+	circulo(x,y,raio);
+	cor("white");
+	circulo(x,y,raio-10);
+	cor("red");
+	circulo(x,y,raio-20);
+	cor("white");
+	circulo(x,y,raio-30);
+	cor("red");
+}
+
+var limpaTela = function() {
+  c.clearRect(0, 0, 600, 400);
+};
+
+var sorteia= function(valor){
+	var sorteio= Math.round(Math.random() * valor);
+	return sorteio;
+}
+
+var desenha=function(valor){
+	limpaTela();
+	alvoX= sorteia(600);
+	alvoY=sorteia(400);
+	desenhaAlvo(alvoX,alvoY);
+}
+
+var click = function(e) {
+	var x = e.pageX - tela.offsetLeft;
+	var y = e.pageY - tela.offsetTop;
+	var alvo = alvoX+raio;
+	if((x > alvoX - raio) && (x < alvoX + raio) &&
+                (y > alvoY - raio) && (y < alvoY + raio)) {
+                        alert(" Você acertou o alvo!");
+        }
+	else
+	console.log("Errou");
+}
+tela.onclick=clickMouse;
+setInterval(desenha,1000);
+</script>	

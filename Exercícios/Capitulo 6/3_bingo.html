@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<input type="text" id="numero"/>
+<input type="submit" value="Adicionar e verificar no Bingo" id="adicionar" />
+
+
+
+
+<script>
+
+var sorteados=[16,34,37,42,50,58];
+
+var adicionarSorteado= function(){
+	var numero= document.getElementById("numero").value;
+	for(var i=0; i< sorteados.length; i= i+1){
+		if(sorteados[i]== numero){
+		alert ("Número Já sorteado."); 
+		return;
+		}
+	}
+	sorteados.push(numero);
+	console.log(sorteados);
+};
+var botao=document.getElementById("adicionar");
+botao.onclick=adicionarSorteado; 
+
+
+</script>

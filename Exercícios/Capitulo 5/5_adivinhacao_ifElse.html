@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<script>
+var pulaLinha= function(){
+	document.write("<br>");
+};
+
+var mostra = function (frase){
+	document.write(frase);
+	pulaLinha();
+};
+
+
+var numeroPensadoCasasDecimais = Math.random()* 10;
+var numeroPensado = Math.round(numeroPensadoCasasDecimais);
+	
+var chute= prompt ("Já pensei. Qual você acha que é? ");
+
+
+if(chute==numeroPensado){
+	mostra("Uau! Você acertou, pois eu pensei no "+ numeroPensado);
+}else{
+	if (isNaN(chute)){
+	mostra ("Somente números são válidos");
+	}else{mostra("Você errou!");
+		if(chute>numeroPensado){
+			mostra ("Seu chute foi maior");
+		}else{
+			mostra("Seu chute foi menor");
+		}
+	}	
+}
+	
+
+</script>
